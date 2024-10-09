@@ -1,0 +1,9 @@
+SELECT 
+    od.order_id, 
+    AVG(od.quantity) AS average_quantity
+FROM 
+    (SELECT * 
+     FROM order_details 
+     WHERE quantity > 10) AS od
+GROUP BY 
+    od.order_id;
